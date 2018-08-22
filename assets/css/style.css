@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+    position: relative;
+}
+
+body {
+    background-color: pink;
+}
+
+h1 {
+    background-color: lemonchiffon;
+    color: black;
+    border: 3px solid blue;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 48px;
+    font-weight: bold;
+    margin: auto;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+h3 {
+    color: white;
+    font-weight: bold;
+    margin: auto;
+    padding: 10px;
+    font-size: 24px;
+}
+
+p {
+    color: green;
+    margin: auto;
+    padding: 10px;
+    font-size: 18px;
+}

@@ -1,41 +1,38 @@
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var win = 1
-var loss = 1
+var win = 0;
+var loss = 0;
 var guessLeft = 9
-var winning = document.getElementById("wins");
-var losing = document.getElementById("losses");
-var guessing = document.getElementById("guess");
-var user = document.getElementById("answers");
+var guessing = [];
+var computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
 
 document.onkeyup = function (event) {
-    var balls = event.key;
-    var computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+    var balls = event.key.toLowerCase();
 
     if (computerGuess === balls) {
-        winning.textContent = (win++);
+        win++;
         guessLeft = 9;
+        guessing = [];
+        computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
     }
 
     else {
-        guessing.textContent = (guessLeft--);
+        guessLeft--;
+        guessing.push(balls);
+        computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+
     }
 
-    user.innerHTML = (balls)
-
-    if (guessLeft < 0) {
+    if (guessLeft === 0) {
         guessLeft = 9;
-        losing.textContent = (loss++);
+        loss++;
+        guessing = [];
+        computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
     }
 
+console.log(computerGuess)
 
-console.log(balls);
-console.log("------------");
-// console.log(loss);
-// console.log("------------");
-// console.log(guessLeft);
-// console.log("------------");
-// console.log(win);
-// console.log("------------");
-console.log(computerGuess);
-console.log("------------");
+document.getElementById("wins").textContent = win;
+document.getElementById("losses").textContent = loss;
+document.getElementById("guess").textContent = guessLeft;
+document.getElementById("answers").textContent = guessing;
 }
