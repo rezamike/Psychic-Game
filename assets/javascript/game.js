@@ -19,4 +19,9 @@ document.onkeyup = function (event) {
         losing.textContent = (loss++);
         guessing.textContent = (guessLeft--);
     }
+
+    if (guessLeft === 0) {
+        guessLeft = 9;
+        loss = 1;
+    }
 }
