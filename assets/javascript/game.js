@@ -29,8 +29,6 @@ document.onkeyup = function (event) {
         computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
     }
 
-console.log(computerGuess)
-
 document.getElementById("wins").textContent = win;
 document.getElementById("losses").textContent = loss;
 document.getElementById("guess").textContent = guessLeft;
